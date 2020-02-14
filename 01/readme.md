@@ -79,15 +79,26 @@
     - 如果是纯数字的字符串，则直接转换为数字
     - 如果字符串中 有非数字的内容，则转换为`NaN`
     - 如果字符串是一个空串或全是空格的字符串，则转换为0。
-  - 布尔 => 数字：`true`转换成1，`false`转换成0。
+
+- 布尔 => 数字：`true`转换成1，`false`转换成0。
+
   - Null => 数字：转换成0
-  - Undefined => 数字： `NaN`
+
+- Undefined => 数字： `NaN`
 
 - 使用`parseInt()`把一个字符串转换为一个整数，可以将一个字符串中有效的整数内容取出来。
 
   ```js
   var a = "123px"
   a = parseInt(a)    // "123"
+  ```
+
+  对于非字符串的数值，使用`parseInt()`方法的时候，会先将该值转换成字符串再进行操作
+
+  ```js
+  var a = true
+  a = parseInt(a)    // NaN 
+  //    a= true   =>   a = "true"  => Number(a)  => NaN
   ```
 
 - 使用`parseFloat()`把一个字符串转换为一个浮点数
@@ -99,3 +110,15 @@
   - 字符串转布尔，除空串都是`true`
   - `null`、`undefined` => `false`
   - 对象也会转换为`true`
+
+## 包装对象
+
+```js
+var a = 'string'
+console.log(a.length)    //6
+a.t = 2
+console.log(a.t)         //undefined
+```
+
+当把一个原始类型尝试以对象的方式访问它的时候，比如使用`length`属性或者新加属性，`JavaScript`会创建一个包装类型对象，它的值与原来的值一样。在访问完成后，这个临时变量就会被销毁。
+ 
