@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outer">
+        <img src="./01.jpg" alt="">
+        <button id="prev">上一张</button>
+        <button id="next">下一张</button>
+    </div>
+    <script>
+        var prev = document.getElementById('prev')
+        var next = document.getElementById('next')
+        var img = document.getElementsByTagName('img')[0]
+
+        // 创建一个数组，用来保存图片的路径
+        var imgArr = ['./01.jpg','./02.jpg']
+
+        // 创建一个变量，来保存当前正在显示的图片的索引
+        var index = 0
+
+        prev.onclick = function () {
+            index--
+            if (index < 0) {
+                index = imgArr.length - 1
+            }
+            img.src = imgArr[index] 
+        }
+
+        next.onclick = function () {
+            index++
+            if (index > imgArr.length - 1) {
+                index = 0
+            }
+            img.src = imgArr[index] 
+        }
+    </script>
+</body>
+</html>
