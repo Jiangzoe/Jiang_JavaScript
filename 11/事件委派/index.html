@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="u1">
+        <li><a href="javascript:;" class="link">超链接一</a></li>
+        <li><a href="javascript:;" class="link">超链接二</a></li>
+        <li><a href="javascript:;" class="link">超链接三</a></li>
+    </ul>
+    <script>
+        var ul = document.getElementById('u1')
+        u1.onclick = function (event) {
+            // 如果触发事件的对象是我们期望的元素，则执行
+            // event中的target表示触发事件的对象
+            if (event.target.className == 'link') {
+                alert('我是ul的单击响应函数')
+            }
+        }
+    </script>
+</body>
+</html>
