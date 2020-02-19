@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+        #sp {
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        我是box1
+        <span id="sp">我是span</span>
+    </div>
+    <script>
+        var s1 = document.getElementById('sp')
+        var box1 = document.getElementById('box1')
+
+        s1.onclick = function () {
+            alert('我是span')
+        }
+
+        box1.onclick = function () {
+            alert('我是box1')
+        }
+
+        document.body.onclick = function() {
+            alert('我是body')
+        }
+    </script>
+</body>
+</html>
